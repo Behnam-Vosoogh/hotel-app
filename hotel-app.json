@@ -13,13 +13,137 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "reservation",
+      "endpoint": "reservations",
       "responses": [
         {
           "uuid": "5f0d1fda-1eb7-45f8-a0fe-4a09964291d9",
-          "body": "\"Hello world\"",
+          "body": "[\n  {\n    \"id\": 1,\n    \"guestName\": \"Behnam\",\n    \"guestEmail\": \"behnam@email.com\",\n    \"roomNumber\": 100,\n    \"checkInDate\": \"2025-05-15\",\n    \"checkOutDate\": \"2025-05-16\"\n  },\n  {\n    \"id\": 2,\n    \"guestName\": \"Behrad\",\n    \"guestEmail\": \"behrad@email.com\",\n    \"roomNumber\": 101,\n    \"checkInDate\": \"2025-05-16\",\n    \"checkOutDate\": \"2025-05-17\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "fc20e6c6-fa48-4d3e-bce1-cce3811002c7",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "reservation/:id",
+      "responses": [
+        {
+          "uuid": "3c16e5e2-d7c5-49e4-a9e2-6c72e0e80d22",
+          "body": "{\n  \"id\": 2,\n  \"guestName\": \"Behrad\",\n  \"guestEmail\": \"behrad@email.com\",\n  \"roomNumber\": 101,\n  \"checkInDate\": \"2025-05-16\",\n  \"checkOutDate\": \"2025-05-17\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "a243132b-37db-4fea-b667-c92f544b3ffd",
+      "type": "http",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "reservation/:id",
+      "responses": [
+        {
+          "uuid": "2df06545-7bcf-4c92-b5a9-a57190e1bae2",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "341f664d-560e-43ab-9db9-6628923c7747",
+      "type": "http",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "reservation/:id",
+      "responses": [
+        {
+          "uuid": "60308a39-da7d-46e6-aa10-1dc799985ed7",
+          "body": "{\n  \"id\": 2,\n  \"guestName\": \"Behrad\",\n  \"guestEmail\": \"behrad@email.com\",\n  \"roomNumber\": 101,\n  \"checkInDate\": \"2025-05-16\",\n  \"checkOutDate\": \"2025-05-17\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "8da383c3-f049-49b6-ba7c-2f754bcc7d0c",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "reservation",
+      "responses": [
+        {
+          "uuid": "c61f67d9-c38c-43a7-a0f3-8d5e1adc5ff9",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
           "label": "",
           "headers": [],
           "bodyType": "INLINE",
@@ -44,6 +168,22 @@
     {
       "type": "route",
       "uuid": "b0090d39-5d8a-4c24-a038-95384917751a"
+    },
+    {
+      "type": "route",
+      "uuid": "fc20e6c6-fa48-4d3e-bce1-cce3811002c7"
+    },
+    {
+      "type": "route",
+      "uuid": "a243132b-37db-4fea-b667-c92f544b3ffd"
+    },
+    {
+      "type": "route",
+      "uuid": "341f664d-560e-43ab-9db9-6628923c7747"
+    },
+    {
+      "type": "route",
+      "uuid": "8da383c3-f049-49b6-ba7c-2f754bcc7d0c"
     }
   ],
   "proxyMode": false,
